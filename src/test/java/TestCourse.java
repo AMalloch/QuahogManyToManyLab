@@ -14,7 +14,6 @@ public class TestCourse {
 
     private Course course;
     private Student student;
-    private List<Course> courses;
 
     @After
     public void tearDown(){
@@ -25,8 +24,7 @@ public class TestCourse {
     @Before
     public void before(){
         course= new Course("Programming", "PDA");
-        courses = new ArrayList<Course>();
-        student = new Student("Sara", 31, 97887);
+        student = new Student("Sara", 31, 97887, course);
         DBHelper.save(student);
         DBHelper.save(course);
     }
